@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../js/config.js"></script>
+  <script src="../../js/app.js"></script>
   <title>Customer Registration | MyTravel.pk - Premium Travel & Flights</title>
   <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
   <!-- Google Fonts: DM Sans & Fraunces -->
@@ -193,7 +195,7 @@
 <script>
   function handleCustomerRegister(e) {
     e.preventDefault();
-    fetch('http://localhost:5200/api/auth/register', {
+    fetch(`${window.MYTRAVEL_API_BASE_URL}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

@@ -2,10 +2,6 @@
  * MYTRAVEL.PK - GLOBAL APPLICATION & CLIENT ENGINE
  */
 
-const API_BASE = window.location.origin.includes('5000') || window.location.origin.includes('5001') || window.location.origin.includes('5200')
-  ? `${window.location.origin}/api`
-  : 'http://localhost:5200/api';
-
 const MyTravelApp = {
   // Authentication State
   auth: {

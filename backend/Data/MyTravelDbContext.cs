@@ -42,22 +42,10 @@ namespace MyTravel.Backend.Data
                 .HasIndex(b => b.BookingReference)
                 .IsUnique();
 
-            // Seed Admin and Demo Customer with BCrypt hashes
-            string adminHash = BCrypt.Net.BCrypt.HashPassword("Admin@123");
+            // Seed Demo Customer with a BCrypt hash
             string customerHash = BCrypt.Net.BCrypt.HashPassword("Customer@123");
 
             modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    Id = 1,
-                    FullName = "MyTravel Administrator",
-                    Email = "admin@mytravel.pk",
-                    PasswordHash = adminHash,
-                    PhoneNumber = "03111-101-365",
-                    Role = "Admin",
-                    IsActive = true,
-                    CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc)
-                },
                 new User
                 {
                     Id = 2,

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyTravel.Backend.Data;
@@ -6,8 +7,13 @@ using MyTravel.Backend.Integrations;
 using MyTravel.Backend.Models;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace MyTravel.Backend.Controllers
 {
@@ -16,10 +22,12 @@ namespace MyTravel.Backend.Controllers
     public class AuthController : ControllerBase
     {
         private readonly MyTravelDbContext _db;
+        private readonly IConfiguration _configuration;
 
-        public AuthController(MyTravelDbContext db)
+        public AuthController(MyTravelDbContext db, IConfiguration configuration)
         {
             _db = db;
+            _configuration = configuration;
         }
 
         [HttpPost("register")]
@@ -53,7 +61,7 @@ namespace MyTravel.Backend.Controllers
             {
                 Success = true,
                 Message = "Account registered successfully.",
-                Token = "MT-JWT-" + Guid.NewGuid().ToString("N"),
+                Token = CreateToken(user),
                 User = new UserDto
                 {
                     Id = user.Id,
@@ -69,7 +77,7 @@ namespace MyTravel.Backend.Controllers
         public async Task<ActionResult<AuthResponse>> Login([FromBody] LoginRequest req)
         {
             var user = await _db.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == req.Email.ToLower());
-            if (user == null || !BCrypt.Net.BCrypt.Verify(req.Password, user.PasswordHash))
+            if (user == null || !user.IsActive || !BCrypt.Net.BCrypt.Verify(req.Password, user.PasswordHash))
             {
                 return Unauthorized(new AuthResponse { Success = false, Message = "Invalid email address or password." });
             }
@@ -81,7 +89,7 @@ namespace MyTravel.Backend.Controllers
             {
                 Success = true,
                 Message = "Authentication successful.",
-                Token = "MT-JWT-" + Guid.NewGuid().ToString("N"),
+                Token = CreateToken(user),
                 User = new UserDto
                 {
                     Id = user.Id,
@@ -91,6 +99,28 @@ namespace MyTravel.Backend.Controllers
                     Role = user.Role
                 }
             });
+        }
+
+        private string CreateToken(User user)
+        {
+            var settings = _configuration.GetSection("JwtSettings");
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.FullName),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
+            };
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(settings["Secret"]!));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var token = new JwtSecurityToken(
+                issuer: settings["Issuer"],
+                audience: settings["Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddDays(_configuration.GetValue<int?>("JwtSettings:ExpiryDays") ?? 7),
+                signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 
@@ -374,6 +404,7 @@ namespace MyTravel.Backend.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : ControllerBase
     {
         private readonly MyTravelDbContext _db;

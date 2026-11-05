@@ -7,6 +7,7 @@ function getHeader(title, activeNav = '', depth = 1) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="${root}/js/config.js"></script>
   <title>${title} | MyTravel.pk - Premium Travel & Flights</title>
   <link rel="icon" type="image/png" href="${root}/assets/images/favicon.png">
   <!-- Google Fonts: DM Sans & Fraunces -->

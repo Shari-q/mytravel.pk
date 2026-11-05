@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/config.js"></script>
   <title>Track My Booking Online | MyTravel.pk</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../css/main.css">
@@ -152,7 +153,7 @@
     const ref = document.getElementById('tr-ref').value;
     const pin = document.getElementById('tr-pin').value;
 
-    fetch('http://localhost:5200/api/flights/track', {
+    fetch(`${window.MYTRAVEL_API_BASE_URL}/flights/track`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ bookingReference: ref, pinCode: pin })

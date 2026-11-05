@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../js/config.js"></script>
+  <script src="../../js/app.js"></script>
   <title>Customer Login | MyTravel.pk - Premium Travel & Flights</title>
   <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
   <!-- Google Fonts: DM Sans & Fraunces -->
@@ -190,7 +192,7 @@
     const email = document.getElementById('login-email').value;
     const pass = document.getElementById('login-password').value;
 
-    fetch('http://localhost:5200/api/auth/login', {
+    fetch(`${window.MYTRAVEL_API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password: pass })
@@ -206,10 +208,7 @@
       }
     })
     .catch(() => {
-      // Offline / client demo fallback
-      MyTravelApp.auth.setSession('DEMO_TOKEN', { id: 2, fullName: 'Hamza Tariq', email: email, role: 'Customer' });
-      MyTravelApp.showToast('Signed in in Demo Mode', 'success');
-      setTimeout(() => window.location.href = 'dashboard.html', 800);
+      MyTravelApp.showToast('Could not connect to the login service. Please try again later.', 'error');
     });
   }
 </script>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/config.js"></script>
   <title>Verify Payment Receipt Online | MyTravel.pk</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../css/main.css">
@@ -149,7 +150,7 @@
     const rec = document.getElementById('rec-number').value;
     const acc = document.getElementById('rec-account').value;
 
-    fetch('http://localhost:5200/api/inquiries/verify-receipt', {
+    fetch(`${window.MYTRAVEL_API_BASE_URL}/inquiries/verify-receipt`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ receiptNumber: rec, customerAccountNumber: acc })

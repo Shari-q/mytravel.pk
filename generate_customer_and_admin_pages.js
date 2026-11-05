@@ -7,6 +7,7 @@ const adminDir = 'C:/Users/PC/.gemini/antigravity/scratch/MyTravel/frontend/page
 
 // CUSTOMER LOGIN
 const custLoginHtml = `${getHeader('Customer Login', '', 2)}
+<script src="../../js/app.js"></script>
 <section class="section-padding" style="background:var(--bg-page); min-height:80vh; display:flex; align-items:center;">
   <div class="container" style="max-width:480px;">
     <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:16px; padding:2.5rem; box-shadow:var(--shadow-card);">
@@ -55,7 +56,7 @@ const custLoginHtml = `${getHeader('Customer Login', '', 2)}
     const email = document.getElementById('login-email').value;
     const pass = document.getElementById('login-password').value;
 
-    fetch('http://localhost:5200/api/auth/login', {
+    fetch(window.MYTRAVEL_API_BASE_URL + '/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password: pass })
@@ -70,12 +71,7 @@ const custLoginHtml = `${getHeader('Customer Login', '', 2)}
         MyTravelApp.showToast(data.message || 'Invalid credentials.', 'error');
       }
     })
-    .catch(() => {
-      // Offline / client demo fallback
-      MyTravelApp.auth.setSession('DEMO_TOKEN', { id: 2, fullName: 'Hamza Tariq', email: email, role: 'Customer' });
-      MyTravelApp.showToast('Signed in in Demo Mode', 'success');
-      setTimeout(() => window.location.href = 'dashboard.html', 800);
-    });
+    .catch(() => MyTravelApp.showToast('Could not connect to the login service. Please try again later.', 'error'));
   }
 </script>
 ${getFooter(2)}`;
@@ -83,6 +79,7 @@ fs.writeFileSync(path.join(custDir, 'login.html'), custLoginHtml);
 
 // CUSTOMER REGISTER
 const custRegisterHtml = `${getHeader('Customer Registration', '', 2)}
+<script src="../../js/app.js"></script>
 <section class="section-padding" style="background:var(--bg-page); min-height:80vh; display:flex; align-items:center;">
   <div class="container" style="max-width:520px;">
     <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:16px; padding:2.5rem; box-shadow:var(--shadow-card);">
@@ -134,7 +131,7 @@ const custRegisterHtml = `${getHeader('Customer Registration', '', 2)}
 <script>
   function handleCustomerRegister(e) {
     e.preventDefault();
-    fetch('http://localhost:5200/api/auth/register', {
+    fetch(window.MYTRAVEL_API_BASE_URL + '/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -153,10 +150,7 @@ const custRegisterHtml = `${getHeader('Customer Registration', '', 2)}
         MyTravelApp.showToast(data.message || 'Registration failed.', 'error');
       }
     })
-    .catch(() => {
-      MyTravelApp.showToast('Account created in Demo Mode!', 'success');
-      setTimeout(() => window.location.href = 'login.html', 1200);
-    });
+    .catch(() => MyTravelApp.showToast('Could not connect to the registration service. Please try again later.', 'error'));
   }
 </script>
 ${getFooter(2)}`;
@@ -360,6 +354,7 @@ fs.writeFileSync(path.join(custDir, 'my-inquiries.html'), custInqHtml);
 
 // ADMIN LOGIN
 const adminLoginHtml = `${getHeader('Administration Portal Login', '', 2)}
+<script src="../../js/app.js"></script>
 <section class="section-padding" style="background:var(--navy-dark); min-height:85vh; display:flex; align-items:center;">
   <div class="container" style="max-width:440px;">
     <div style="background:#FFFFFF; border-radius:16px; padding:2.5rem; box-shadow:var(--shadow-elevated);">
@@ -369,18 +364,18 @@ const adminLoginHtml = `${getHeader('Administration Portal Login', '', 2)}
         <p style="font-size:0.8125rem; color:var(--text-muted);">Sign in to access bookings, revenue and site settings.</p>
       </div>
 
-      <div style="background:#FEF2F2; border:1px solid #FECACA; color:#991B1B; padding:0.75rem; border-radius:8px; font-size:0.8125rem; margin-bottom:1.5rem;">
-        <strong>Admin Credentials:</strong> admin@mytravel.pk / Admin@123
+      <div style="background:#EFF6FF; border:1px solid #BFDBFE; color:#1E40AF; padding:0.75rem; border-radius:8px; font-size:0.8125rem; margin-bottom:1.5rem;">
+        Sign in using the administrator account configured for this site.
       </div>
 
       <form id="admin-login-form" onsubmit="handleAdminLogin(event)">
         <div class="form-group" style="margin-bottom:1.25rem;">
           <label class="form-label">Admin Email</label>
-          <input type="email" class="form-input" id="adm-email" value="admin@mytravel.pk" required>
+          <input type="email" class="form-input" id="adm-email" autocomplete="username" required>
         </div>
         <div class="form-group" style="margin-bottom:1.5rem;">
           <label class="form-label">Password</label>
-          <input type="password" class="form-input" id="adm-password" value="Admin@123" required>
+          <input type="password" class="form-input" id="adm-password" autocomplete="current-password" required>
         </div>
         <button type="submit" class="btn btn-navy btn-lg" style="width:100%;">
           Authenticate Admin
@@ -395,27 +390,24 @@ const adminLoginHtml = `${getHeader('Administration Portal Login', '', 2)}
     const email = document.getElementById('adm-email').value;
     const pass = document.getElementById('adm-password').value;
 
-    fetch('http://localhost:5200/api/auth/login', {
+    fetch(window.MYTRAVEL_API_BASE_URL + '/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password: pass })
     })
     .then(res => res.json())
     .then(data => {
-      if (data.success) {
+      if (data.success && data.token && data.user && String(data.user.role || '').toLowerCase() === 'admin') {
         localStorage.setItem('mytravel_admin_token', data.token);
         MyTravelApp.showToast('Admin authorized successfully!', 'success');
         setTimeout(() => window.location.href = 'dashboard.html', 800);
+      } else if (data.success) {
+        MyTravelApp.showToast('This account does not have administrator access.', 'error');
       } else {
         MyTravelApp.showToast(data.message || 'Invalid credentials.', 'error');
       }
     })
-    .catch(() => {
-      // Demo fallback
-      localStorage.setItem('mytravel_admin_token', 'DEMO_ADMIN_TOKEN');
-      MyTravelApp.showToast('Authorized in Demo Mode', 'success');
-      setTimeout(() => window.location.href = 'dashboard.html', 800);
-    });
+    .catch(() => MyTravelApp.showToast('Could not connect to the login service. Please try again later.', 'error'));
   }
 </script>
 ${getFooter(2)}`;
@@ -423,6 +415,7 @@ fs.writeFileSync(path.join(adminDir, 'login.html'), adminLoginHtml);
 
 // ADMIN DASHBOARD
 const adminDashHtml = `${getHeader('Admin Management Dashboard', '', 2)}
+<script src="../../js/app.js"></script>
 <section class="section-padding" style="background:var(--bg-page);">
   <div class="container">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
@@ -479,15 +472,32 @@ const adminDashHtml = `${getHeader('Admin Management Dashboard', '', 2)}
 </section>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:5200/api/admin/dashboard-metrics')
-      .then(res => res.json())
+    const token = localStorage.getItem('mytravel_admin_token');
+    if (!token) {
+      window.location.replace('login.html');
+      return;
+    }
+
+    fetch(window.MYTRAVEL_API_BASE_URL + '/admin/dashboard-metrics', {
+      headers: { Authorization: 'Bearer ' + token }
+    })
+      .then(res => {
+        if (res.status === 401) {
+          localStorage.removeItem('mytravel_admin_token');
+          window.location.replace('login.html');
+          return null;
+        }
+        if (!res.ok) throw new Error('Dashboard request failed.');
+        return res.json();
+      })
       .then(m => {
+        if (!m) return;
         if (m.totalCustomers) document.getElementById('m-cust').textContent = m.totalCustomers;
         if (m.confirmedBookings) document.getElementById('m-book').textContent = m.confirmedBookings;
         if (m.totalVisas) document.getElementById('m-visa').textContent = m.totalVisas;
         if (m.verifiedRevenue) document.getElementById('m-rev').textContent = 'PKR ' + m.verifiedRevenue.toLocaleString();
       })
-      .catch(() => {});
+      .catch(() => MyTravelApp.showToast('Could not load dashboard data from the API.', 'error'));
   });
 </script>
 ${getFooter(2)}`;

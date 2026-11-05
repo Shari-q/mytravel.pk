@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: mytravel-pk-api
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    disk:
+      name: mytravel-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:10000
+      - key: MYTRAVEL_DB_PATH
+        value: /data/mytravel.db
+      - key: CORS__AllowedOrigins__0
+        value: https://shari-q.github.io
+      - key: Admin__Email
+        value: admin@mytravel.pk
+      - key: Admin__Password
+        sync: false
+      - key: JwtSettings__Secret
+        sync: false

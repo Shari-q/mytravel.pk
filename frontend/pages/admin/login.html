@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../js/config.js"></script>
+  <script src="../../js/app.js"></script>
   <title>Administration Portal Login | MyTravel.pk - Premium Travel & Flights</title>
   <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
   <!-- Google Fonts: DM Sans & Fraunces -->
@@ -151,18 +153,18 @@
         <p style="font-size:0.8125rem; color:var(--text-muted);">Sign in to access bookings, revenue and site settings.</p>
       </div>
 
-      <div style="background:#FEF2F2; border:1px solid #FECACA; color:#991B1B; padding:0.75rem; border-radius:8px; font-size:0.8125rem; margin-bottom:1.5rem;">
-        <strong>Admin Credentials:</strong> admin@mytravel.pk / Admin@123
+      <div style="background:#EFF6FF; border:1px solid #BFDBFE; color:#1E40AF; padding:0.75rem; border-radius:8px; font-size:0.8125rem; margin-bottom:1.5rem;">
+        Sign in using the administrator account configured for this site.
       </div>
 
       <form id="admin-login-form" onsubmit="handleAdminLogin(event)">
         <div class="form-group" style="margin-bottom:1.25rem;">
           <label class="form-label">Admin Email</label>
-          <input type="email" class="form-input" id="adm-email" value="admin@mytravel.pk" required>
+          <input type="email" class="form-input" id="adm-email" autocomplete="username" required>
         </div>
         <div class="form-group" style="margin-bottom:1.5rem;">
           <label class="form-label">Password</label>
-          <input type="password" class="form-input" id="adm-password" value="Admin@123" required>
+          <input type="password" class="form-input" id="adm-password" autocomplete="current-password" required>
         </div>
         <button type="submit" class="btn btn-navy btn-lg" style="width:100%;">
           Authenticate Admin
@@ -177,26 +179,25 @@
     const email = document.getElementById('adm-email').value;
     const pass = document.getElementById('adm-password').value;
 
-    fetch('http://localhost:5200/api/auth/login', {
+    fetch(`${window.MYTRAVEL_API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password: pass })
     })
     .then(res => res.json())
     .then(data => {
-      if (data.success) {
+      if (data.success && data.token && data.user && String(data.user.role || '').toLowerCase() === 'admin') {
         localStorage.setItem('mytravel_admin_token', data.token);
         MyTravelApp.showToast('Admin authorized successfully!', 'success');
         setTimeout(() => window.location.href = 'dashboard.html', 800);
+      } else if (data.success) {
+        MyTravelApp.showToast('This account does not have administrator access.', 'error');
       } else {
         MyTravelApp.showToast(data.message || 'Invalid credentials.', 'error');
       }
     })
     .catch(() => {
-      // Demo fallback
-      localStorage.setItem('mytravel_admin_token', 'DEMO_ADMIN_TOKEN');
-      MyTravelApp.showToast('Authorized in Demo Mode', 'success');
-      setTimeout(() => window.location.href = 'dashboard.html', 800);
+      MyTravelApp.showToast('Could not connect to the login service. Please try again later.', 'error');
     });
   }
 </script>
