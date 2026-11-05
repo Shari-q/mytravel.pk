@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MyTravel.Backend.props" />
+</Project>

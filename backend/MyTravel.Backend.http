@@ -1,0 +1,6 @@
+@MyTravel.Backend_HostAddress = http://localhost:5089
+
+GET {{MyTravel.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

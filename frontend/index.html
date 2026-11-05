@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyTravel.pk | Premium 3D Travel, Flights, Visas & Insurance Pakistan</title>
+  <meta name="description" content="Book cheap flights, tourist visit visas and embassy approved travel insurance with MyTravel.pk. Licensed by DTS and IATA TIDS Member in Pakistan.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Three.js CDN with Local Fallback -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Notification Bar (Verified Credentials) -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span class="top-credential-badge">
+          <i class="bi bi-patch-check-fill"></i>
+          <strong>DTS Licensed</strong> Agency
+        </span>
+        <span class="top-credential-badge">
+          <i class="bi bi-award-fill"></i>
+          <strong>IATA TIDS</strong> Member
+        </span>
+        <span class="top-credential-badge">
+          <i class="bi bi-shield-check"></i>
+          Authorized Agent: <strong>Adamjee & United Insurance</strong>
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <a href="pages/mybooking.html" style="display:inline-flex; align-items:center; gap:0.35rem;">
+          <i class="bi bi-search"></i> Track Booking
+        </a>
+        <a href="pages/receipt-verify.html" style="display:inline-flex; align-items:center; gap:0.35rem;">
+          <i class="bi bi-receipt"></i> Verify Receipt
+        </a>
+        <a href="tel:03111101365" class="uan-link">
+          <i class="bi bi-telephone-fill"></i> UAN: 03111-101-365
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header & Navigation (PNG Logo only, zero text overlap) -->
+  <!-- Main Header & Navigation (Clean PNG Logo only, zero text overlap) -->
+  <header class="main-header">
+    <div class="container header-container">
+      <!-- Only MyTravel PNG Logo -->
+      <a href="index.html" class="brand-logo-wrap" title="MyTravel.pk Home">
+        <img src="assets/images/logo.jpg" alt="MyTravel.pk" class="brand-logo">
+      </a>
+
+      <!-- Modern Navigation Menu with Icons -->
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link"><i class="bi bi-house-door-fill"></i> <span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/about.html" class="nav-link"><i class="bi bi-info-circle-fill"></i> <span>About Us</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/flights.html" class="nav-link">
+              <i class="bi bi-airplane-fill"></i> <span>Flights</span> <i class="bi bi-chevron-down chevron"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="pages/flights.html" class="dropdown-link"><i class="bi bi-airplane"></i> Flight Search Engine</a></li>
+              <li><a href="pages/flights-results.html" class="dropdown-link"><i class="bi bi-filter-square"></i> Available Flight Deals</a></li>
+              <li><a href="pages/airline-offices.html" class="dropdown-link"><i class="bi bi-buildings"></i> Airline Offices Directory</a></li>
+              <li><a href="pages/mybooking.html" class="dropdown-link"><i class="bi bi-ticket-perforated"></i> Retrieve Booking</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="pages/visas.html" class="nav-link">
+              <i class="bi bi-passport-fill"></i> <span>Visas</span> <i class="bi bi-chevron-down chevron"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="pages/visas.html" class="dropdown-link"><i class="bi bi-passport"></i> All Tourist Visas</a></li>
+              <li><a href="pages/visa-details.html?country=azerbaijan" class="dropdown-link"><img src="assets/images/flags/az.svg" class="flag-icon" alt="Azerbaijan"> Azerbaijan e-Visa</a></li>
+              <li><a href="pages/visa-details.html?country=thailand" class="dropdown-link"><img src="assets/images/flags/th.svg" class="flag-icon" alt="Thailand"> Thailand Tourist Visa</a></li>
+              <li><a href="pages/visa-details.html?country=malaysia" class="dropdown-link"><img src="assets/images/flags/my.svg" class="flag-icon" alt="Malaysia"> Malaysia e-Visa</a></li>
+              <li><a href="pages/visa-details.html?country=singapore" class="dropdown-link"><img src="assets/images/flags/sg.svg" class="flag-icon" alt="Singapore"> Singapore Visa</a></li>
+              <li><a href="pages/visa-details.html?country=dubai" class="dropdown-link"><img src="assets/images/flags/ae.svg" class="flag-icon" alt="UAE"> Dubai 30/60 Days Visa</a></li>
+              <li><a href="pages/visa-details.html?country=turkey" class="dropdown-link"><img src="assets/images/flags/tr.svg" class="flag-icon" alt="Turkey"> Turkey Tourist Visa</a></li>
+              <li><a href="pages/visa-details.html?country=saudi" class="dropdown-link"><img src="assets/images/flags/sa.svg" class="flag-icon" alt="Saudi Arabia"> Saudi Tourist / Umrah Visa</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="pages/insurance.html" class="nav-link">
+              <i class="bi bi-shield-check"></i> <span>Insurance</span> <i class="bi bi-chevron-down chevron"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="pages/insurance.html" class="dropdown-link"><i class="bi bi-shield-check"></i> Instant Online Insurance</a></li>
+              <li><a href="pages/insurance-compare.html" class="dropdown-link"><i class="bi bi-sliders"></i> Compare Adamjee vs UIC</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="pages/excursions.html" class="nav-link"><i class="bi bi-compass-fill"></i> <span>Excursions</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/destinations.html" class="nav-link"><i class="bi bi-geo-alt-fill"></i> <span>Destinations</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/travel-news.html" class="nav-link"><i class="bi bi-newspaper"></i> <span>Travel News</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/contact.html" class="nav-link"><i class="bi bi-envelope-fill"></i> <span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <a href="pages/login.html" class="btn btn-outline btn-sm"><i class="bi bi-person-circle"></i> <span>Login</span></a>
+        <a href="pages/flights.html" class="btn btn-primary btn-sm"><i class="bi bi-send-fill"></i> <span>Book Now</span></a>
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- Responsive Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/logo.jpg" alt="MyTravel.pk" class="mobile-drawer-logo">
+      <button class="mobile-drawer-close" onclick="toggleMobileMenu()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link active"><i class="bi bi-house-door-fill"></i> Home</a></li>
+        <li><a href="pages/about.html" class="mobile-nav-link"><i class="bi bi-info-circle-fill"></i> About Us</a></li>
+        <li><a href="pages/flights.html" class="mobile-nav-link"><i class="bi bi-airplane-fill"></i> Flights & Booking</a></li>
+        <li><a href="pages/flights-results.html" class="mobile-nav-link"><i class="bi bi-filter-square"></i> Flight Search Results</a></li>
+        <li><a href="pages/airline-offices.html" class="mobile-nav-link"><i class="bi bi-buildings"></i> Airline Offices (30+ Carriers)</a></li>
+        <li><a href="pages/visas.html" class="mobile-nav-link"><i class="bi bi-passport-fill"></i> Tourist Visas</a></li>
+        <li><a href="pages/insurance.html" class="mobile-nav-link"><i class="bi bi-shield-check"></i> Travel Insurance (Adamjee & UIC)</a></li>
+        <li><a href="pages/excursions.html" class="mobile-nav-link"><i class="bi bi-compass-fill"></i> Excursions & Tours</a></li>
+        <li><a href="pages/destinations.html" class="mobile-nav-link"><i class="bi bi-geo-alt-fill"></i> Destinations</a></li>
+        <li><a href="pages/travel-news.html" class="mobile-nav-link"><i class="bi bi-newspaper"></i> Travel News</a></li>
+        <li><a href="pages/contact.html" class="mobile-nav-link"><i class="bi bi-envelope-fill"></i> Contact Us</a></li>
+        <li><a href="pages/mybooking.html" class="mobile-nav-link"><i class="bi bi-ticket-perforated"></i> My Booking / PNR</a></li>
+        <li><a href="pages/receipt-verify.html" class="mobile-nav-link"><i class="bi bi-receipt"></i> Verify Payment Receipt</a></li>
+      </ul>
+      <div class="mobile-drawer-cta">
+        <a href="pages/login.html" class="btn btn-outline btn-block"><i class="bi bi-person-circle"></i> Customer Login</a>
+        <a href="tel:03111101365" class="btn btn-primary btn-block"><i class="bi bi-telephone-fill"></i> Call UAN: 03111-101-365</a>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" onclick="toggleMobileMenu()"></div>
+  
+
+  <!-- Hero Stage with Interactive 3D Earth Globe -->
+  <section class="hero-stage">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-grid">
+      <!-- Left Copy Column -->
+      <div class="hero-copy">
+        <div class="hero-badge-pill">
+          <img src="assets/images/flags/pk.svg" class="flag-icon" alt="Pakistan Flag">
+          <span>Verified Pakistan Travel Partner • DTS & IATA Certified</span>
+        </div>
+        <h1 class="hero-headline">
+          Elevate Your Journey with <em>MyTravel.pk</em>
+        </h1>
+        <p class="hero-subtext">
+          Experience seamless international travel booking from Pakistan. Instant e-visas, real-time flight reservations, and embassy-approved travel insurance issued in under 30 minutes.
+        </p>
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <span class="hero-stat-num">15K+</span>
+            <span class="hero-stat-label">Insurances Issued</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num">25 Min</span>
+            <span class="hero-stat-label">Average Issuance</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num">4.8 / 5</span>
+            <span class="hero-stat-label">Verified Client Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 3D Globe Visual Column -->
+      <div class="hero-3d-visual">
+        <div id="globe3d-canvas"></div>
+        <div class="globe-route-card">
+          <span class="route-dot"></span>
+          <img src="assets/images/flags/pk.svg" class="flag-icon">
+          <strong>Karachi (KHI)</strong>
+          <i class="bi bi-airplane-engines route-arrow"></i>
+          <img src="assets/images/flags/ae.svg" class="flag-icon">
+          <strong>Dubai (DXB)</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Booking Widget -->
+  <div class="container hero-booking-wrapper">
+    <div class="booking-card">
+      <!-- Tabs -->
+      <div class="booking-tabs">
+        <button class="booking-tab-btn active" data-tab="flights"><i class="bi bi-airplane-fill"></i> Flights</button>
+        <a href="pages/visas.html" class="booking-tab-btn"><i class="bi bi-passport"></i> Tourist Visas</a>
+        <a href="pages/insurance.html" class="booking-tab-btn"><i class="bi bi-shield-plus"></i> Travel Insurance (20% OFF)</a>
+        <a href="pages/excursions.html" class="booking-tab-btn"><i class="bi bi-cup-hot-fill"></i> Airport Lounges & Tours</a>
+      </div>
+
+      <!-- Trip Type Radios -->
+      <div class="trip-type-selector">
+        <label class="trip-type-label">
+          <input type="radio" name="tripType" value="roundtrip" checked onchange="updateTripMode(this.value)"> Round Trip
+        </label>
+        <label class="trip-type-label">
+          <input type="radio" name="tripType" value="oneway" onchange="updateTripMode(this.value)"> One Way
+        </label>
+        <label class="trip-type-label">
+          <input type="radio" name="tripType" value="multicity" onchange="updateTripMode(this.value)"> Multi-City
+        </label>
+        <span class="demo-badge"><i class="bi bi-info-circle"></i> Live Search Demo Ready</span>
+      </div>
+
+      <!-- Search Grid -->
+      <form id="hero-flight-search-form" onsubmit="handleHeroFlightSearch(event)">
+        <div class="search-form-grid">
+          <!-- From -->
+          <div class="form-group">
+            <label class="form-label">Departure From</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-geo-alt-fill"></i>
+              <select class="form-select" id="search-origin" onchange="syncGlobeOrigin(this.value)">
+                <option value="KHI" selected>🇵🇰 Karachi (KHI) - Jinnah Intl</option>
+                <option value="LHE">🇵🇰 Lahore (LHE) - Allama Iqbal Intl</option>
+                <option value="ISB">🇵🇰 Islamabad (ISB) - Islamabad Intl</option>
+                <option value="PEW">🇵🇰 Peshawar (PEW) - Bacha Khan</option>
+                <option value="MUX">🇵🇰 Multan (MUX) - Multan Intl</option>
+                <option value="SKT">🇵🇰 Sialkot (SKT) - Sialkot Intl</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- To -->
+          <div class="form-group">
+            <label class="form-label">Flying To</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-pin-map-fill"></i>
+              <select class="form-select" id="search-destination" onchange="syncGlobeDestination(this.value)">
+                <option value="DXB" selected>🇦🇪 Dubai (DXB) - UAE</option>
+                <option value="DOH">🇶🇦 Doha (DOH) - Qatar</option>
+                <option value="LHR">🇬🇧 London (LHR) - UK</option>
+                <option value="GYD">🇦🇿 Baku (GYD) - Azerbaijan</option>
+                <option value="BKK">🇹🇭 Bangkok (BKK) - Thailand</option>
+                <option value="KUL">🇲🇾 Kuala Lumpur (KUL) - Malaysia</option>
+                <option value="JED">🇸🇦 Jeddah (JED) - Saudi Arabia</option>
+                <option value="IST">🇹🇷 Istanbul (IST) - Turkey</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Departure Date -->
+          <div class="form-group">
+            <label class="form-label">Departure Date</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-calendar3"></i>
+              <input type="date" class="form-input" id="search-depart-date" value="2026-11-20" required>
+            </div>
+          </div>
+
+          <!-- Return Date -->
+          <div class="form-group" id="return-date-group">
+            <label class="form-label">Return Date</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-calendar3-range"></i>
+              <input type="date" class="form-input" id="search-return-date" value="2026-11-28">
+            </div>
+          </div>
+
+          <!-- Passengers & Class -->
+          <div class="form-group">
+            <label class="form-label">Travelers & Class</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-people-fill"></i>
+              <select class="form-select" id="search-cabin">
+                <option value="1-economy" selected>1 Adult, Economy</option>
+                <option value="2-economy">2 Adults, Economy</option>
+                <option value="1-business">1 Adult, Business</option>
+                <option value="family-economy">Family (2A + 2C), Economy</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group">
+            <button type="submit" class="btn-search-flights">
+              <i class="bi bi-search"></i>
+              <span>Search Flights</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Verified Trust Credentials Bar -->
+  <section class="trust-credentials-bar">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon-box"><i class="bi bi-award"></i></div>
+        <div class="trust-info">
+          <h4>Government DTS Licensed</h4>
+          <p>Department of Tourist Services Accredited</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon-box"><i class="bi bi-shield-check"></i></div>
+        <div class="trust-info">
+          <h4>Adamjee & UIC Agent</h4>
+          <p>Official corporate insurance partnership</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon-box"><i class="bi bi-lightning-charge"></i></div>
+        <div class="trust-info">
+          <h4>Policy in 30 Minutes</h4>
+          <p>Instant PDF delivered via WhatsApp & Email</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon-box"><i class="bi bi-headset"></i></div>
+        <div class="trust-info">
+          <h4>Expert Support: 03111-101-365</h4>
+          <p>15+ years experience travel consultants</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section class="section-padding" style="background:#FFFFFF;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">What We Offer</span>
+        <h2 class="section-title">Comprehensive Travel Solutions</h2>
+        <p class="section-desc">From complex multi-stop international itineraries to embassy paperwork and luxury airport lounge access, MyTravel.pk ensures your journey is smooth and memorable.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="bi bi-airplane-engines"></i></div>
+          <h3 class="service-title">Flight Reservations</h3>
+          <p class="service-excerpt">Domestic and international flight ticketing with leading carriers including PIA, Emirates, Qatar Airways and Fly Jinnah at competitive fares.</p>
+          <a href="pages/flights.html" class="service-link">Explore Flights <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="bi bi-passport"></i></div>
+          <h3 class="service-title">Tourist & Visit Visas</h3>
+          <p class="service-excerpt">Hassle-free e-visa and sticker visa processing for Azerbaijan, Thailand, Malaysia, Singapore, Indonesia, Vietnam, Kenya and the Middle East.</p>
+          <a href="pages/visas.html" class="service-link">View Visas <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="bi bi-shield-plus"></i></div>
+          <h3 class="service-title">Travel Insurance</h3>
+          <p class="service-excerpt">Embassy-accepted Schengen, Worldwide and UK/USA travel coverage from Pakistan's trusted underwriters with exclusive 20% savings.</p>
+          <a href="pages/insurance.html" class="service-link">Compare Plans <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="bi bi-cup-hot"></i></div>
+          <h3 class="service-title">Airport Lounges & Tours</h3>
+          <p class="service-excerpt">Pre-book VIP international departure lounges at Lahore (PKR 6,200) and Islamabad (PKR 7,400) airports featuring gourmet buffets and Wi-Fi.</p>
+          <a href="pages/excursions.html" class="service-link">Book Lounges <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Visa Services with Real Country Flags -->
+  <section class="section-padding" style="background:var(--bg-page);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Verified Requirements & Fees</span>
+        <h2 class="section-title">Trending Tourist Visas for Pakistanis</h2>
+        <p class="section-desc">Apply online with high-definition scans. No need to submit original passports for fast-track e-visa processing.</p>
+      </div>
+
+      <div class="visas-grid">
+        <!-- Azerbaijan -->
+        <div class="visa-card">
+          <div class="visa-card-header">
+            <img src="assets/images/destinations/baku.jpg" alt="Baku Azerbaijan" class="visa-card-img">
+            <span class="visa-flag-badge"><img src="assets/images/flags/az.svg" class="flag-icon"> Azerbaijan</span>
+            <span class="visa-badge-type">e-Visa</span>
+          </div>
+          <div class="visa-card-body">
+            <h3 class="visa-card-country">Azerbaijan Tourist e-Visa</h3>
+            <p style="font-size:0.875rem; color:var(--text-muted);">Explore historic Baku, the Flame Towers, and Caspian Sea boulevard.</p>
+            <ul class="visa-features-list">
+              <li><i class="bi bi-check-circle-fill"></i> 30 Days Validity</li>
+              <li><i class="bi bi-check-circle-fill"></i> Processing: 3 to 4 Days</li>
+              <li><i class="bi bi-check-circle-fill"></i> Only Passport & CNIC Scan</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price-wrap">
+                <span class="visa-price-label">Official Starting Fee</span>
+                <span class="visa-price-amount">PKR 12,000</span>
+              </div>
+              <a href="pages/visa-details.html?country=azerbaijan" class="btn btn-sm btn-primary">Apply Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thailand -->
+        <div class="visa-card">
+          <div class="visa-card-header">
+            <img src="assets/images/destinations/thailand.jpg" alt="Bangkok Thailand" class="visa-card-img">
+            <span class="visa-flag-badge"><img src="assets/images/flags/th.svg" class="flag-icon"> Thailand</span>
+            <span class="visa-badge-type">e-Visa</span>
+          </div>
+          <div class="visa-card-body">
+            <h3 class="visa-card-country">Thailand Tourist Visa</h3>
+            <p style="font-size:0.875rem; color:var(--text-muted);">Vibrant street life, ornate temples, and world-famous tropical beaches.</p>
+            <ul class="visa-features-list">
+              <li><i class="bi bi-check-circle-fill"></i> 3 Months Validity / 30 Days Stay</li>
+              <li><i class="bi bi-check-circle-fill"></i> Processing: 5 to 7 Days</li>
+              <li><i class="bi bi-check-circle-fill"></i> 3-Month Bank Statement</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price-wrap">
+                <span class="visa-price-label">Official Starting Fee</span>
+                <span class="visa-price-amount">PKR 17,500</span>
+              </div>
+              <a href="pages/visa-details.html?country=thailand" class="btn btn-sm btn-primary">Apply Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Malaysia -->
+        <div class="visa-card">
+          <div class="visa-card-header">
+            <img src="assets/images/destinations/malaysia.jpg" alt="Kuala Lumpur Malaysia" class="visa-card-img">
+            <span class="visa-flag-badge"><img src="assets/images/flags/my.svg" class="flag-icon"> Malaysia</span>
+            <span class="visa-badge-type">e-Visa</span>
+          </div>
+          <div class="visa-card-body">
+            <h3 class="visa-card-country">Malaysia Tourist e-Visa</h3>
+            <p style="font-size:0.875rem; color:var(--text-muted);">Ideal destination for family holidays, shopping, and scenic hill resorts.</p>
+            <ul class="visa-features-list">
+              <li><i class="bi bi-check-circle-fill"></i> 30 Days Single Entry Stay</li>
+              <li><i class="bi bi-check-circle-fill"></i> Processing: 3 to 5 Days</li>
+              <li><i class="bi bi-check-circle-fill"></i> 6-Month Bank Statement</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price-wrap">
+                <span class="visa-price-label">Official Starting Fee</span>
+                <span class="visa-price-amount">PKR 12,000</span>
+              </div>
+              <a href="pages/visa-details.html?country=malaysia" class="btn btn-sm btn-primary">Apply Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Singapore -->
+        <div class="visa-card">
+          <div class="visa-card-header">
+            <img src="assets/images/destinations/singapore.jpg" alt="Singapore Skyline" class="visa-card-img">
+            <span class="visa-flag-badge"><img src="assets/images/flags/sg.svg" class="flag-icon"> Singapore</span>
+            <span class="visa-badge-type">e-Visa</span>
+          </div>
+          <div class="visa-card-body">
+            <h3 class="visa-card-country">Singapore Tourist Visa</h3>
+            <p style="font-size:0.875rem; color:var(--text-muted);">Gardens by the Bay, Marina Bay Sands, and world-class urban attractions.</p>
+            <ul class="visa-features-list">
+              <li><i class="bi bi-check-circle-fill"></i> 30 Days Stay Duration</li>
+              <li><i class="bi bi-check-circle-fill"></i> Processing: 4 to 6 Days</li>
+              <li><i class="bi bi-check-circle-fill"></i> Complete Application Support</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price-wrap">
+                <span class="visa-price-label">Official Starting Fee</span>
+                <span class="visa-price-amount">PKR 18,500</span>
+              </div>
+              <a href="pages/visa-details.html?country=singapore" class="btn btn-sm btn-primary">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Aircraft Cabin & Interactive Seat Selection Showcase ("Asli Jahaz") -->
+  
+  <!-- 3D Aircraft Takeoff, Cruise & Landing Simulator ("Jahaz Ureh Phir Land Karee") -->
+  <section class="flight-simulator-section" id="takeoff-landing-simulator">
+    <div class="container">
+      <div class="sim-section-header">
+        <span class="badge"><i class="bi bi-airplane-engines"></i> Interactive 3D WebGL Flight Experience</span>
+        <h2>Watch 3D Airplane Takeoff, Sky Cruise & Landing</h2>
+        <p>
+          Experience our Boeing 777-300ER flight dynamics. Watch the aircraft accelerate down the runway, rotate and lift off, climb through 3D clouds over the Arabian Sea, deploy landing gear on approach, and touch down with realistic tire smoke at your destination.
+        </p>
+
+        <!-- Route Selector Pills with Flags -->
+        <div class="sim-route-selector-pills">
+          <button class="route-pill-btn active" onclick="switchSimRoute('Karachi (KHI)', 'assets/images/flags/pk.svg', 'Dubai (DXB)', 'assets/images/flags/ae.svg', this)">
+            <img src="assets/images/flags/pk.svg" class="flag-icon" alt="PK"> Karachi (KHI) &rarr; <img src="assets/images/flags/ae.svg" class="flag-icon" alt="AE"> Dubai (DXB)
+          </button>
+          <button class="route-pill-btn" onclick="switchSimRoute('Lahore (LHE)', 'assets/images/flags/pk.svg', 'Baku (GYD)', 'assets/images/flags/az.svg', this)">
+            <img src="assets/images/flags/pk.svg" class="flag-icon" alt="PK"> Lahore (LHE) &rarr; <img src="assets/images/flags/az.svg" class="flag-icon" alt="AZ"> Baku (GYD)
+          </button>
+          <button class="route-pill-btn" onclick="switchSimRoute('Islamabad (ISB)', 'assets/images/flags/pk.svg', 'London (LHR)', 'assets/images/flags/gb.svg', this)">
+            <img src="assets/images/flags/pk.svg" class="flag-icon" alt="PK"> Islamabad (ISB) &rarr; <img src="assets/images/flags/gb.svg" class="flag-icon" alt="GB"> London (LHR)
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D Viewport with HUD Telemetry & Camera Switchers -->
+      <div class="sim-viewport-container">
+        <div id="flight-sim-canvas"></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cabin-experience-section">
+    <div class="container">
+      <div class="cabin-experience-grid">
+        <!-- Cabin Copy -->
+        <div class="cabin-info-col">
+          <span class="badge badge-gold" style="margin-bottom:0.75rem;"><i class="bi bi-airplane-fill"></i> Realistic 3D Aircraft Cabin</span>
+          <h2>Explore The Cabin & Choose Your Seat</h2>
+          <p>
+            Experience our interactive Boeing 777-300ER passenger cabin visualization. Look through aircraft windows, explore lie-flat First and Business suites, extra-legroom exit rows, and choose your preferred seat before booking.
+          </p>
+
+          <div class="cabin-legend">
+            <div class="legend-item"><span class="legend-box available"></span> Standard Available</div>
+            <div class="legend-item"><span class="legend-box selected"></span> Selected Seat</div>
+            <div class="legend-item"><span class="legend-box premium"></span> First / Extra Legroom</div>
+            <div class="legend-item"><span class="legend-box occupied"></span> Occupied</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.08); padding:1.25rem; border-radius:12px; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.12);">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.9rem;">
+              <span>Selected Seat Number:</span>
+              <strong id="selected-seat-display" style="color:var(--gold-accent); font-size:1.1rem;">14B (Window/Middle)</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.9rem;">
+              <span>Seat Selection Surcharge:</span>
+              <strong id="seat-fee-display" style="color:#38BDF8;">PKR 0 (Included)</strong>
+            </div>
+          </div>
+
+          <a href="pages/flights.html" class="btn btn-primary btn-lg">
+            <i class="bi bi-airplane-fill"></i> Continue with this Seat
+          </a>
+        </div>
+
+        <!-- 3D / 2D Cabin Viewer -->
+        <div class="cabin-stage-wrap">
+          <div class="cabin-controls-bar">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <i class="bi bi-airplane-engines" style="color:#38BDF8; font-size:1.2rem;"></i>
+              <span style="font-size:0.875rem; font-weight:700;">Aircraft: Boeing 777-300ER Wide-Body</span>
+            </div>
+            <div class="cabin-view-toggle">
+              <button class="toggle-btn active" id="btn-view-3d" onclick="toggleCabinView('3d')">3D Cabin View</button>
+              <button class="toggle-btn" id="btn-view-2d" onclick="toggleCabinView('2d')">2D Aircraft Map</button>
+            </div>
+          </div>
+
+          <!-- 3D Three.js Viewport (Real Fuselage Interior) -->
+          <div id="cabin3d-viewport"></div>
+
+          <!-- Accessible 2D Aircraft Blueprint Fallback Map -->
+          <div id="cabin2d-fallback" class="seatmap-2d-container"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Insurance Module (Verified Adamjee & UIC Authorized) -->
+  <section class="section-padding insurance-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Official Insurance Agent</span>
+        <h2 class="section-title">Embassy-Approved Travel Insurance</h2>
+        <p class="section-desc">Get instant Schengen, USA, UK and Worldwide travel insurance policies issued online with up to 20% discount. Delivered in 30 minutes via WhatsApp & Email.</p>
+      </div>
+
+      <div class="insurance-grid">
+        <!-- Adamjee Schengen Standard -->
+        <div class="insurance-card featured">
+          <span class="card-ribbon">Most Popular</span>
+          <div class="insurance-card-header">
+            <div class="partner-logo-box"><i class="bi bi-shield-shaded"></i></div>
+            <div>
+              <h3 class="insurance-title">Adamjee Schengen Standard</h3>
+              <span class="insurance-discount-tag"><i class="bi bi-tag-fill"></i> Save 20% Online</span>
+            </div>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted);">Embassy accepted worldwide for European visa requirements.</p>
+          <ul class="coverage-list">
+            <li><i class="bi bi-check2-circle"></i> <strong>€30,000</strong> Medical & Hospitalization Coverage</li>
+            <li><i class="bi bi-check2-circle"></i> Medical Evacuation & Repatriation Included</li>
+            <li><i class="bi bi-check2-circle"></i> Checked Baggage Loss & Delay Compensation</li>
+            <li><i class="bi bi-check2-circle"></i> Accepted by All Schengen Embassies</li>
+          </ul>
+          <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-light); padding-top:1.25rem; margin-top:auto;">
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-light); text-decoration:line-through;">PKR 6,000</div>
+              <div style="font-size:1.4rem; font-weight:800; color:var(--primary-blue);">PKR 4,800</div>
+            </div>
+            <a href="pages/insurance.html?plan=adamjee-schengen" class="btn btn-sm btn-primary">Buy Policy</a>
+          </div>
+        </div>
+
+        <!-- United Insurance UIC Saver -->
+        <div class="insurance-card">
+          <div class="insurance-card-header">
+            <div class="partner-logo-box"><i class="bi bi-shield-check"></i></div>
+            <div>
+              <h3 class="insurance-title">UIC Schengen Smart Saver</h3>
+              <span class="insurance-discount-tag"><i class="bi bi-tag-fill"></i> Save 20% Online</span>
+            </div>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted);">High-value Schengen approved coverage from United Insurance Company.</p>
+          <ul class="coverage-list">
+            <li><i class="bi bi-check2-circle"></i> <strong>€30,000</strong> Emergency Medical Expense</li>
+            <li><i class="bi bi-check2-circle"></i> 24/7 International Emergency Assistance</li>
+            <li><i class="bi bi-check2-circle"></i> Instant Digital Policy Certificate (PDF)</li>
+            <li><i class="bi bi-check2-circle"></i> Full Refund if Visa is Rejected</li>
+          </ul>
+          <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-light); padding-top:1.25rem; margin-top:auto;">
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-light); text-decoration:line-through;">PKR 5,250</div>
+              <div style="font-size:1.4rem; font-weight:800; color:var(--primary-blue);">PKR 4,200</div>
+            </div>
+            <a href="pages/insurance.html?plan=uic-schengen" class="btn btn-sm btn-primary">Buy Policy</a>
+          </div>
+        </div>
+
+        <!-- Adamjee Worldwide Gold -->
+        <div class="insurance-card">
+          <div class="insurance-card-header">
+            <div class="partner-logo-box"><i class="bi bi-globe2"></i></div>
+            <div>
+              <h3 class="insurance-title">Adamjee Worldwide Gold</h3>
+              <span class="insurance-discount-tag"><i class="bi bi-tag-fill"></i> Save 20% Online</span>
+            </div>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted);">Comprehensive global coverage including USA, Canada and Australia.</p>
+          <ul class="coverage-list">
+            <li><i class="bi bi-check2-circle"></i> <strong>$50,000</strong> Medical & Accidental Hospitalization</li>
+            <li><i class="bi bi-check2-circle"></i> Flight Cancellation & Severe Delay Protection</li>
+            <li><i class="bi bi-check2-circle"></i> Passport & Document Loss Assistance</li>
+            <li><i class="bi bi-check2-circle"></i> Global SOS Emergency Hotline</li>
+          </ul>
+          <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-light); padding-top:1.25rem; margin-top:auto;">
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-light); text-decoration:line-through;">PKR 10,625</div>
+              <div style="font-size:1.4rem; font-weight:800; color:var(--primary-blue);">PKR 8,500</div>
+            </div>
+            <a href="pages/insurance.html?plan=adamjee-worldwide" class="btn btn-sm btn-primary">Buy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Airline Directory Section with Real Country Flags -->
+  <section class="section-padding" style="background:#FFFFFF; border-top:1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Airlines In Pakistan</span>
+        <h2 class="section-title">Major Carriers Operating From Pakistan</h2>
+        <p class="section-desc">Direct contact numbers, hub details, and official operating airports with authentic country flags.</p>
+      </div>
+
+      <div class="airlines-grid">
+        <!-- PIA -->
+        <div class="airline-card">
+          <div class="airline-brand-badge pia">PK</div>
+          <div class="airline-info">
+            <h4>Pakistan International (PIA)</h4>
+            <div class="airline-hub-line">
+              <img src="assets/images/flags/pk.svg" class="flag-icon" alt="Pakistan">
+              <span>Hub: Karachi (KHI) & Islamabad (ISB)</span>
+            </div>
+            <div class="airline-contact-line"><i class="bi bi-telephone"></i> UAN: 111-786-786</div>
+          </div>
+        </div>
+
+        <!-- Emirates -->
+        <div class="airline-card">
+          <div class="airline-brand-badge emirates">EK</div>
+          <div class="airline-info">
+            <h4>Emirates</h4>
+            <div class="airline-hub-line">
+              <img src="assets/images/flags/ae.svg" class="flag-icon" alt="UAE">
+              <span>Hub: Dubai International (DXB)</span>
+            </div>
+            <div class="airline-contact-line"><i class="bi bi-telephone"></i> Tel: 042-35789800</div>
+          </div>
+        </div>
+
+        <!-- Qatar Airways -->
+        <div class="airline-card">
+          <div class="airline-brand-badge qatar">QR</div>
+          <div class="airline-info">
+            <h4>Qatar Airways</h4>
+            <div class="airline-hub-line">
+              <img src="assets/images/flags/qa.svg" class="flag-icon" alt="Qatar">
+              <span>Hub: Hamad International (DOH)</span>
+            </div>
+            <div class="airline-contact-line"><i class="bi bi-telephone"></i> Tel: 021-111-310-310</div>
+          </div>
+        </div>
+
+        <!-- AirSial -->
+        <div class="airline-card">
+          <div class="airline-brand-badge airsial">PF</div>
+          <div class="airline-info">
+            <h4>AirSial</h4>
+            <div class="airline-hub-line">
+              <img src="assets/images/flags/pk.svg" class="flag-icon" alt="Pakistan">
+              <span>Hub: Sialkot (SKT) & Karachi (KHI)</span>
+            </div>
+            <div class="airline-contact-line"><i class="bi bi-telephone"></i> UAN: 021-111-247-742</div>
+          </div>
+        </div>
+
+        <!-- Fly Jinnah -->
+        <div class="airline-card">
+          <div class="airline-brand-badge flyjinnah">9P</div>
+          <div class="airline-info">
+            <h4>Fly Jinnah</h4>
+            <div class="airline-hub-line">
+              <img src="assets/images/flags/pk.svg" class="flag-icon" alt="Pakistan">
+              <span>Hub: Karachi Jinnah Intl (KHI)</span>
+            </div>
+            <div class="airline-contact-line"><i class="bi bi-telephone"></i> UAN: 021-35656565</div>
+          </div>
+        </div>
+
+        <!-- Azerbaijan Airlines -->
+        <div class="airline-card">
+          <div class="airline-brand-badge azerbaijan">J2</div>
+          <div class="airline-info">
+            <h4>Azerbaijan Airlines</h4>
+            <div class="airline-hub-line">
+              <img src="assets/images/flags/az.svg" class="flag-icon" alt="Azerbaijan">
+              <span>Hub: Baku Heydar Aliyev (GYD)</span>
+            </div>
+            <div class="airline-contact-line"><i class="bi bi-airplane"></i> Direct Flights to LHE & ISB</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="pages/airline-offices.html" class="btn btn-outline">
+          <i class="bi bi-buildings"></i> View All 30+ Airline Offices Directory
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Testimonials (Original Reviews) -->
+  <section class="section-padding testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Real Traveler Experiences</span>
+        <h2 class="section-title">Trusted by Thousands Across Pakistan</h2>
+        <p class="section-desc">Read genuine reviews from travelers who rely on MyTravel.pk for fast visas, flights, and insurance.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="testimonial-quote">
+            "I applied for Azerbaijan e-visas for my entire family. Within 3 days we had our verified visas in our WhatsApp inbox. Very professional and dependable service!"
+          </p>
+          <div class="testimonial-author-wrap">
+            <div class="author-avatar">MB</div>
+            <div class="author-meta">
+              <h4>Muhammad Bilal</h4>
+              <p>Family Vacation to Baku • Lahore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="testimonial-quote">
+            "Needed a Schengen-compliant Adamjee insurance policy urgently for my German embassy appointment. Received the official PDF in less than 20 minutes! Saved 20% on the official price."
+          </p>
+          <div class="testimonial-author-wrap">
+            <div class="author-avatar">SK</div>
+            <div class="author-meta">
+              <h4>Saad Khan</h4>
+              <p>Business Travel to Frankfurt • Karachi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="testimonial-quote">
+            "MyTravel team guided me through every document required for my Thailand visit. Their transparency on fees and prompt phone support makes them the best travel agency in Pakistan."
+          </p>
+          <div class="testimonial-author-wrap">
+            <div class="author-avatar">AR</div>
+            <div class="author-meta">
+              <h4>Ayesha Rehman</h4>
+              <p>Tourist Visa to Bangkok • Islamabad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section style="background:linear-gradient(135deg, var(--navy-deep) 0%, #061B3B 100%); color:#FFFFFF; padding:4rem 0;">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem;">
+      <div style="max-width:550px;">
+        <h3 style="font-family:var(--font-editorial); font-size:1.85rem; margin-bottom:0.5rem;">Stay Updated with Travel Advisories</h3>
+        <p style="color:#94A3B8; font-size:0.95rem;">Subscribe to get verified currency regulations, airline route updates and discounted visa offers delivered to your inbox.</p>
+      </div>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-grow:1; max-width:480px;">
+        <input type="email" placeholder="Enter your email address" required style="flex-grow:1; padding:0.85rem 1.25rem; border-radius:var(--radius-pill); border:none; outline:none; font-size:0.9375rem;">
+        <button type="submit" class="btn btn-primary" style="border-radius:var(--radius-pill); padding:0.85rem 1.5rem; white-space:nowrap;">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Executive Footer (with Transparent White Logo) -->
+  
+  <!-- Official Accreditation & Trust Strip (IATA TIDS, DTS, Visa, Mastercard) -->
+  <div class="accreditation-trust-strip">
+    <div class="container accreditation-flex">
+      <!-- Left: Logo & Tagline -->
+      <div class="acc-brand">
+        <a href="index.html" style="display:inline-block;">
+          <img src="assets/images/logo.jpg" alt="MyTravel.pk" class="acc-logo-img">
+        </a>
+        <div class="acc-tagline">Your journey &mdash; our expertise</div>
+      </div>
+
+      <!-- Center: Official Accreditation Seals -->
+      <div class="acc-seals">
+        <div class="acc-seal-item" title="IATA TIDS Accredited Member (Travel Industry Designator Service)">
+          <img src="assets/images/iata-tids-logo.png" alt="IATA TIDS" class="acc-seal-img">
+        </div>
+        <div class="acc-seal-item" title="Department of Tourist Services (DTS) Licensed Agency">
+          <img src="assets/images/dts-logo.png" alt="DTS Tourism Department" class="acc-seal-img">
+        </div>
+      </div>
+
+      <!-- Right: We Accept Cards -->
+      <div class="acc-payments">
+        <span class="acc-accept-text">We accept</span>
+        <div class="acc-pay-logos">
+          <img src="assets/images/visa-logo.png" alt="Visa" class="acc-pay-img">
+          <img src="assets/images/mastercard-logo.png" alt="Mastercard" class="acc-pay-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Brand & Creds -->
+      <div class="footer-col-brand">
+        <a href="index.html">
+          <img src="assets/images/logo.jpg" alt="MyTravel.pk" class="footer-brand-logo">
+        </a>
+        <p class="footer-bio">
+          Operated by experienced travel professionals with more than 15 years of industry leadership. MyTravel.pk is Pakistan's premier licensed full-service travel platform.
+        </p>
+        <div class="footer-socials">
+          <a href="https://facebook.com/MyTravelPak" target="_blank" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://instagram.com/MyTravelPak" target="_blank" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://linkedin.com/company/MyTravelPK" target="_blank" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://wa.me/923111101365" target="_blank" class="social-link" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Services -->
+      <div>
+        <h4 class="footer-heading">Travel Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="pages/flights.html"><i class="bi bi-chevron-right"></i> Book Flights Online</a></li>
+          <li><a href="pages/visas.html"><i class="bi bi-chevron-right"></i> Tourist Visas</a></li>
+          <li><a href="pages/insurance.html"><i class="bi bi-chevron-right"></i> Travel Insurance (20% OFF)</a></li>
+          <li><a href="pages/insurance-compare.html"><i class="bi bi-chevron-right"></i> Adamjee & UIC Plans</a></li>
+          <li><a href="pages/excursions.html"><i class="bi bi-chevron-right"></i> Airport Lounges & Tours</a></li>
+          <li><a href="pages/airline-offices.html"><i class="bi bi-chevron-right"></i> Airline Offices Directory</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Quick Links -->
+      <div>
+        <h4 class="footer-heading">Support & Tracking</h4>
+        <ul class="footer-links-list">
+          <li><a href="pages/mybooking.html"><i class="bi bi-chevron-right"></i> Retrieve My Booking</a></li>
+          <li><a href="pages/receipt-verify.html"><i class="bi bi-chevron-right"></i> Verify Payment Receipt</a></li>
+          <li><a href="pages/about.html"><i class="bi bi-chevron-right"></i> About Ahsan Bhatti & Team</a></li>
+          <li><a href="pages/travel-news.html"><i class="bi bi-chevron-right"></i> Travel Advisories</a></li>
+          <li><a href="pages/blog.html"><i class="bi bi-chevron-right"></i> Travel Guides & Blog</a></li>
+          <li><a href="pages/faqs.html"><i class="bi bi-chevron-right"></i> Frequently Asked Questions</a></li>
+          <li><a href="pages/contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+          <li><a href="pages/admin/login.html"><i class="bi bi-shield-lock"></i> Administration Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Verified Contact -->
+      <div>
+        <h4 class="footer-heading">Registered Office</h4>
+        <div class="footer-contact-items">
+          <div class="f-contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Office No. 310, Al-Hafeez Business Center, 89-A Block B3, Firdous Market Road, Gulberg-III, Lahore, Pakistan</span>
+          </div>
+          <div class="f-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <span>UAN: <strong>03111-101-365</strong></span>
+          </div>
+          <div class="f-contact-item">
+            <i class="bi bi-whatsapp"></i>
+            <span>WhatsApp: <strong>+92 311 1101365</strong></span>
+          </div>
+          <div class="f-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <span>Email: <strong>hello@mytravel.pk</strong></span>
+          </div>
+          <div class="f-contact-item">
+            <i class="bi bi-award-fill"></i>
+            <span>Department of Tourist Services (DTS) & IATA TIDS Accredited</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 MyTravel.pk. All rights reserved. Powered by MyTravel Smart Travel Technology.
+      </div>
+      <div class="footer-legal-links">
+        <a href="pages/privacy-policy.html">Privacy Policy</a>
+        <a href="pages/terms.html">Terms of Service</a>
+        <a href="pages/refund-policy.html">Refund & Cancellation</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating WhatsApp Quick Connect Button -->
+  <a href="https://wa.me/923111101365" target="_blank" rel="noopener noreferrer" class="whatsapp-float" title="Chat on WhatsApp" aria-label="Chat with MyTravel on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/globe3d.js"></script>
+  <script src="js/seatmap3d.js"></script>
+  <script src="js/flightAnimation.js"></script>
+  <script src="js/flightEngine.js"></script>
+
+  <script>
+    let myGlobe = null;
+    let mySeatMap = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      myGlobe = new MyTravelGlobe('globe3d-canvas', {
+        origin: { name: 'Karachi (KHI)', lat: 24.9065, lon: 67.1608 },
+        destination: { name: 'Dubai (DXB)', lat: 25.2532, lon: 55.3657 }
+      });
+
+      // Initialize Authentic 3D Airplane Seat Map ("Asli Jahaz")
+      mySeatMap = new MyTravelSeatMap('cabin3d-viewport', 'cabin2d-fallback');
+
+      // Initialize 3D Takeoff & Landing Flight Simulator
+      if (window.initFlightSimulator) {
+        window.initFlightSimulator('flight-sim-canvas', {
+          route: 'KHI-DXB',
+          origin: 'Karachi (KHI)',
+          destination: 'Dubai (DXB)',
+          originFlag: 'assets/images/flags/pk.svg',
+          destFlag: 'assets/images/flags/ae.svg',
+          flightNumber: 'EK-601 / PK-787'
+        });
+      }
+    
+    });
+
+    function syncGlobeOrigin(code) {
+      const destCode = document.getElementById('search-destination').value;
+      if (myGlobe) myGlobe.updateRoute(code, destCode);
+    }
+
+    function syncGlobeDestination(code) {
+      const originCode = document.getElementById('search-origin').value;
+      if (myGlobe) myGlobe.updateRoute(originCode, code);
+    }
+
+    function updateTripMode(mode) {
+      const returnGrp = document.getElementById('return-date-group');
+      if (returnGrp) {
+        returnGrp.style.display = mode === 'oneway' ? 'none' : 'flex';
+      }
+    }
+
+    
+    function switchSimRoute(origin, originFlag, dest, destFlag, btn) {
+      document.querySelectorAll('.route-pill-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      if (window.myFlightSim) {
+        window.myFlightSim.setRoute(origin, originFlag, dest, destFlag);
+      }
+    }
+    
+    function toggleCabinView(mode) {
+      document.getElementById('btn-view-3d').classList.toggle('active', mode === '3d');
+      document.getElementById('btn-view-2d').classList.toggle('active', mode === '2d');
+      if (mySeatMap) mySeatMap.toggleView(mode);
+    }
+
+    function handleHeroFlightSearch(e) {
+      e.preventDefault();
+      const origin = document.getElementById('search-origin').value;
+      const destination = document.getElementById('search-destination').value;
+      const departDate = document.getElementById('search-depart-date').value;
+      const returnDate = document.getElementById('search-return-date').value;
+      const cabin = document.getElementById('search-cabin').value;
+
+      MyTravelFlightEngine.setSearch({
+        tripType: document.querySelector('input[name="tripType"]:checked').value,
+        origin,
+        destination,
+        departDate,
+        returnDate,
+        cabinClass: cabin
+      });
+
+      window.location.href = 'pages/flights-results.html';
+    }
+  </script>
+</body>
+</html>

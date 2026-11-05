@@ -1,0 +1,92 @@
+{
+  "https://mytravel.pk/": {
+    "status": 200,
+    "length": 39555,
+    "title": "Lowest Prices on Flights and Travel Insurance | MyTravel.pk",
+    "metaDesc": "Find and book flights to your favorite destinations at competitive prices. Get up to 20% off on travel insurance to Schengen and worldwide"
+  },
+  "https://mytravel.pk/about-us": {
+    "status": 404,
+    "length": 11621,
+    "title": "Page Not Found",
+    "metaDesc": "The page or feature you are looking for, could not be found or is not available anymore."
+  },
+  "https://mytravel.pk/contact-us": {
+    "status": 404,
+    "length": 11621,
+    "title": "Page Not Found",
+    "metaDesc": "The page or feature you are looking for, could not be found or is not available anymore."
+  },
+  "https://mytravel.pk/flights": {
+    "status": 200,
+    "length": 39404,
+    "title": "Book Cheap Air Tickets in Pakistan | MyTravel.pk",
+    "metaDesc": "Find lowest fare and cheap airline tickets. Compare airline fares, find airline discounts and offers."
+  },
+  "https://mytravel.pk/visas": {
+    "status": 200,
+    "length": 34055,
+    "title": "Tourist and Visit Visas | Quick Processing | MyTravel.pk",
+    "metaDesc": "Choose and apply from a variety of tourist visa offerings to several countries. We offer complete processing for visit visas."
+  },
+  "https://mytravel.pk/travel-insurance": {
+    "status": 200,
+    "length": 67352,
+    "title": "Online Travel Insurance with 20% Discount | MyTravel.pk",
+    "metaDesc": "Book your travel insurance online. Compare best prices on travel insurance plans and get your travel insurance within minutes."
+  },
+  "https://mytravel.pk/excursions": {
+    "status": 200,
+    "length": 17550,
+    "title": "Book International Tours &amp; Activities from Pakistan | mytravel.pk",
+    "metaDesc": "Discover and book top international attractions, sightseeing tours, and travel activities from Pakistan. Explore the world&#x2019;s best destinations easily with mytravel.pk"
+  },
+  "https://mytravel.pk/destinations": {
+    "status": 404,
+    "length": 11621,
+    "title": "Page Not Found",
+    "metaDesc": "The page or feature you are looking for, could not be found or is not available anymore."
+  },
+  "https://mytravel.pk/travel-news": {
+    "status": 404,
+    "length": 11621,
+    "title": "Page Not Found",
+    "metaDesc": "The page or feature you are looking for, could not be found or is not available anymore."
+  },
+  "https://mytravel.pk/blog": {
+    "status": 200,
+    "length": 15605,
+    "title": "Travel Tips, Guides &amp; Destination Insights | MyTravel.pk",
+    "metaDesc": "Discover practical travel tips, destination guides, and useful information to enhance your travel experience every day with MyTravel.pk. Plan smarter and travel better."
+  },
+  "https://mytravel.pk/airline-offices": {
+    "status": 200,
+    "length": 40231,
+    "title": "Airline Offices in Pakistan | Airlines Operating from Pakistan",
+    "metaDesc": "Find updated contact details of airline offices in Pakistan and explore the list of international and domestic airlines operating from major airports including Karachi, Lahore, Islamabad, Peshawar, Multan, Faisalabad and Sialkot"
+  },
+  "https://mytravel.pk/terms-and-conditions": {
+    "status": 404,
+    "length": 11621,
+    "title": "Page Not Found",
+    "metaDesc": "The page or feature you are looking for, could not be found or is not available anymore."
+  },
+  "https://mytravel.pk/privacy-policy": {
+    "status": 200,
+    "length": 15888,
+    "title": "Privacy Policy",
+    "metaDesc": "Read our privacy policy"
+  },
+  "https://mytravel.pk/refund-policy": {
+    "status": 200,
+    "length": 14565,
+    "title": "Refund Policy",
+    "metaDesc": "Read our refund policy"
+  },
+  "https://mytravel.pk/faqs": {
+    "status": 404,
+    "length": 11621,
+    "title": "Page Not Found",
+    "metaDesc": "The page or feature you are looking for, could not be found or is not available anymore."
+  }
+}
